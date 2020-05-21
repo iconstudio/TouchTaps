@@ -1,2 +1,2 @@
 /// @description 터치
-change_color()
+touch_precedure()

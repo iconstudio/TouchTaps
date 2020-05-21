@@ -1,9 +1,6 @@
 /// @description seconds(time)
 /// @function seconds
 /// @param time { real }
-function seconds(argument0) {
-	return max(1, argument0 * room_speed)
-
-
-
+function seconds(time) {
+	return max(1, time * room_speed)
 }
