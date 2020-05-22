@@ -1,6 +1,7 @@
 {
   "resources": [
     {"id":{"name":"sPoint","path":"sprites/sPoint/sPoint.yy",},"order":0,},
+    {"id":{"name":"fontGame","path":"fonts/fontGame/fontGame.yy",},"order":0,},
     {"id":{"name":"seconds","path":"scripts/seconds/seconds.yy",},"order":0,},
     {"id":{"name":"oInit","path":"objects/oInit/oInit.yy",},"order":0,},
     {"id":{"name":"oGlobal","path":"objects/oGlobal/oGlobal.yy",},"order":1,},
@@ -34,6 +35,9 @@
     {"folderPath":"folders/Scripts.yy","order":1,"resourceVersion":"1.0","name":"Scripts","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects.yy","order":2,"resourceVersion":"1.0","name":"Objects","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Rooms.yy","order":3,"resourceVersion":"1.0","name":"Rooms","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Fonts.yy","order":4,"resourceVersion":"1.0","name":"Fonts","tags":[
+        "font",
+      ],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":461609314234257646,"resourceVersion":"1.0","name":"audiogroup_default","resourceType":"GMAudioGroup",},
