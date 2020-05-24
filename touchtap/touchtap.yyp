@@ -1,12 +1,7 @@
 {
   "resources": [
     {"id":{"name":"sPoint","path":"sprites/sPoint/sPoint.yy",},"order":0,},
-<<<<<<< HEAD
-    {"id":{"name":"scripts","path":"scripts/scripts/scripts.yy",},"order":0,},
-=======
     {"id":{"name":"fontGame","path":"fonts/fontGame/fontGame.yy",},"order":0,},
-    {"id":{"name":"seconds","path":"scripts/seconds/seconds.yy",},"order":0,},
->>>>>>> 18766b05cde8ee668931c2837110ca087146593b
     {"id":{"name":"oInit","path":"objects/oInit/oInit.yy",},"order":0,},
     {"id":{"name":"oGlobal","path":"objects/oGlobal/oGlobal.yy",},"order":1,},
     {"id":{"name":"oTouchPad","path":"objects/oTouchPad/oTouchPad.yy",},"order":2,},
