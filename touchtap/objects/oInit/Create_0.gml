@@ -1,5 +1,7 @@
 randomize()
 
+global.first = true
+
 global.debug = true
 show_debug_overlay(global.debug)
 
