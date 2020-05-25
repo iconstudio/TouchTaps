@@ -1,9 +1,21 @@
 /// @description 초기화
-color = {
-	hue: 0,
-	sat: 0,
-	val: 0
-}
+color = new (function() constructor {
+	time = 1
+	period = 1
+	hue = 0
+	sat = 0
+	val = 0
+	hue_begin = 0
+	sat_begin = 0
+	val_begin = 0
+	hue_target = 0
+	sat_target = 0
+	val_target = 0
+
+	static run = function() {
+		
+	}
+})()
 
 function change_color_immediately() {
 	color.hue = irandom(255)
