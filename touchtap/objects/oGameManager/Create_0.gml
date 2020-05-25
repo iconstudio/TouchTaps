@@ -1,12 +1,20 @@
 /// @description 초기화
-background = {
-	element_id: layer_background_get_id(layer_get_id("Background")),
-
-	change_color: function() {
-		layer_background_blend(element_id, color_get_random())
-	}
+color = {
+	hue: 0,
+	sat: 0,
+	val: 0
 }
 
+function change_color_immediately() {
+	color.hue = irandom(255)
+	color.sat = irandom(255)
+	color.val = irandom(255)
+	image_blend = make_color_hsv(color.hue, color.sat, color.val)
+}
+
+function change_color() {
+	image_blend = color_get_random()
+}
 
 player = {
 	hp: 3,
@@ -19,11 +27,11 @@ state_ready = new (function() constructor {
 	period = seconds(2)
 
 	static construct = function() {
-		other.background.change_color()
+		other.change_color_immediately()
 	}
 
 	static run = function() {
-		
+
 	}
 
 	static draw = function() {
