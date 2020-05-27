@@ -87,8 +87,7 @@ state_main = new (function() constructor {
 
 	static run = function() {
 		if io_check_ok() or mouse_check_button_pressed(mb_left) {
-			with other
-				mode_change(state_ready)
+			other.mode_change(other.state_ready)
 		}
 	}
 
