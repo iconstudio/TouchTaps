@@ -9,3 +9,8 @@ function color_get_random() {
 function struct_exists(struct) {
 	return !is_undefined(instanceof(struct))
 }
+
+function io_check_ok() {
+	return keyboard_check_pressed(vk_enter)
+	or keyboard_check_pressed(vk_space)
+}

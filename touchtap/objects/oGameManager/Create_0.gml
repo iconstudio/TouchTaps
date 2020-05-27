@@ -86,7 +86,10 @@ state_main = new (function() constructor {
 	}
 
 	static run = function() {
-		
+		if io_check_ok() or mouse_check_button_pressed(mb_left) {
+			with other
+				mode_change(state_ready)
+		}
 	}
 
 	static draw = function() {
@@ -103,7 +106,7 @@ state_main = new (function() constructor {
 	}
 
 	static destruct = function() {
-		
+		time = 0
 	}
 })()
 
@@ -158,7 +161,7 @@ state_play = new (function() constructor {
 	
 		}
 
-		if mouse_check_button_pressed(mb_left) or (global.debug and keyboard_check_pressed(vk_space)) {
+		if io_check_ok() or mouse_check_button_pressed(mb_left) {
 			touch_precedure()
 		}
 	}
