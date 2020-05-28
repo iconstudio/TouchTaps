@@ -218,3 +218,6 @@ mode_change(state_main)
 size = [room_width, room_height]
 image_xscale = size[0]
 image_yscale = size[1]
+
+// 서피스 생성
+event_user(0)
