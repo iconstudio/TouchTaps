@@ -2,7 +2,7 @@
   "hinting": 0,
   "glyphOperations": 4,
   "interpreter": 0,
-  "pointRounding": 2,
+  "pointRounding": 0,
   "fontName": "HY헤드라인M",
   "styleName": "Regular",
   "size": 25.0,

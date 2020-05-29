@@ -17,6 +17,8 @@ color = new (function() constructor {
 	val_target = 0
 
 	run = function() {
+		other.image_blend = other.color_method(hue, sat, val)
+
 		var gradient_ratio = time / period
 		if time++ < period {
 			hue = lerp(hue_begin, hue_target, gradient_ratio)
@@ -92,16 +94,8 @@ state_main = new (function() constructor {
 	}
 
 	static draw = function() {
-		draw_set_font(fontMainTitle)
-		draw_set_halign(1)
-		draw_set_valign(1)
-
-		gpu_set_blendmode_ext(bm_inv_dest_color,bm_inv_src_color)
-		draw_text(other.size[0] * 0.5, other.size[1] * 0.3333, "TAPPYSTRY")
-		gpu_set_blendmode(bm_normal)
-
-		draw_set_font(fontMain)
-		draw_text(other.size[0] * 0.5, other.size[1] * 0.8, "TAP TO START")
+		other.draw_title()
+		other.draw_starter()
 	}
 
 	static destruct = function() {
@@ -122,11 +116,7 @@ state_ready = new (function() constructor {
 	}
 
 	static draw = function() {
-		draw_set_font(fontMainTitle)
-		draw_set_halign(1)
-		draw_set_valign(1)
-
-		draw_text(other.size[0] * 0.5, other.size[1] * 0.3333, "TAPPYSTRY")
+		other.draw_title()
 	}
 
 	static destruct = function() {
@@ -221,3 +211,20 @@ image_yscale = size[1]
 
 // 서피스 생성
 event_user(0)
+event_user(1)
+
+draw_title = function() {
+	if !surface_exists(surface_title)
+		event_user(0)
+
+	gpu_set_blendmode_ext(bm_inv_dest_color,bm_inv_src_color)
+	draw_surface(0, 0, surface_title)
+	gpu_set_blendmode(bm_normal)
+}
+
+draw_starter = function() {
+	if !surface_exists(surface_starter)
+		event_user(1)
+
+	draw_surface(0, 0, surface_starter)
+}
