@@ -4,3 +4,7 @@ if surface_exists(surface_title)
 
 if surface_exists(surface_starter)
 	surface_free(surface_starter)
+
+delete mode_change
+delete draw_title
+delete draw_starter
