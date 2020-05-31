@@ -15,7 +15,6 @@ state_main = new (function() constructor {
 	}
 
 	static draw = function() {
-		
 		other.draw_title()
 		other.draw_starter()
 	}
