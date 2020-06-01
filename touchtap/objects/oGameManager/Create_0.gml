@@ -1,11 +1,16 @@
 /// @description 초기화
 global.stage = 0
 player = new (function() constructor {
-	hp = 3
+	hp_max_default = 3
+	hp = hp_max_default
 	stars = 0
 	combo = 0
 
-	
+	static ready = function() {
+		hp = hp_max_default
+		stars = 0
+		combo = 0
+	}
 
 	static die = function() {
 		

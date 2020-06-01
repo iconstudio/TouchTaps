@@ -4,6 +4,7 @@ state_main = new (function() constructor {
 	period = seconds(2)
 
 	static construct = function() {
+		other.color.set_period(other.color_periods[0])
 		other.change_color_immediately()
 		other.change_color()
 	}
@@ -28,19 +29,41 @@ state_ready = new (function() constructor {
 	time = 0
 	period = seconds(2)
 	counter = 0
+	counter_max = 3
 	counter_time = 0
-	counter_period = seconds(2)
+	counter_period = seconds(1)
 
 	static construct = function() {
-		other.change_color_immediately()
+		other.color.set_period(other.color_periods[2])
 	}
 
 	static run = function() {
-
+		if counter_time < counter_period {
+			counter_time++
+		} else {
+			if counter++ < counter_max {
+				counter_time = 0
+				other.change_color()
+				other.color.set_period(other.color_periods[0])
+				other.mode_change(other.state_ready)
+			} else {
+				counter_time = 0
+				counter = 0
+				other.change_color()
+			}
+		}
 	}
 
 	static draw = function() {
-		other.draw_title()
+		draw_set_font(fontGame)
+		draw_set_halign(1)
+		draw_set_valign(1)
+
+		if counter < counter_max {
+			
+		} else {
+			
+		}
 	}
 
 	static destruct = function() {
