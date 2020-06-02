@@ -1,5 +1,5 @@
 /// @description 게임 모드 선언
-state_main = new (function() constructor {
+state_intro = new (function() constructor {
 	time = 0
 	period = seconds(2)
 
@@ -7,6 +7,31 @@ state_main = new (function() constructor {
 		other.color.set_period(other.color_periods[0])
 		other.change_color_immediately()
 		other.change_color()
+	}
+
+	static run = function() {
+		if time < period {
+			time++
+		} else {
+			other.mode_change(other.state_main)
+		}
+	}
+
+	static draw = function() {
+		
+	}
+
+	static destruct = function() {
+		time = 0
+	}
+})()
+
+state_main = new (function() constructor {
+	time = 0
+	period = seconds(2)
+
+	static construct = function() {
+		
 	}
 
 	static run = function() {
