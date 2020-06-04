@@ -5,8 +5,7 @@ state_intro = new (function() constructor {
 
 	static construct = function() {
 		other.color.set_period(other.color_periods[0])
-		other.change_color_immediately()
-		other.change_color()
+		other.change_color(128, 255, 255)
 	}
 
 	static run = function() {

@@ -59,6 +59,11 @@ color = new (function() constructor {
 	}
 })()
 
+function change_color(h, s, v) {
+	color.set(h, s, v)
+	image_blend = color_method(color.hue, color.sat, color.val)
+}
+
 function change_color() {
 	color.set(irandom(255), irandom(255), irandom(255))
 	image_blend = color_method(color.hue, color.sat, color.val)
