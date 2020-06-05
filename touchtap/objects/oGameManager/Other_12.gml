@@ -4,8 +4,8 @@ state_intro = new (function() constructor {
 	period = seconds(2)
 
 	static construct = function() {
-		other.color.set_period(other.color_periods[0])
-		other.change_color(128, 255, 255)
+		other.color.set_period(1)
+		other.change_color(0, 0, 255)
 	}
 
 	static run = function() {
@@ -30,7 +30,7 @@ state_main = new (function() constructor {
 	period = seconds(2)
 
 	static construct = function() {
-		
+		other.color.set_period(other.color_periods[0])
 	}
 
 	static run = function() {
