@@ -5,7 +5,7 @@ state_intro = new (function() constructor {
 
 	static construct = function() {
 		other.color.set_period(1)
-		other.change_color(0, 0, 255)
+		other.change_color()
 	}
 
 	static run = function() {
@@ -109,7 +109,7 @@ state_play = new (function() constructor {
 
 	static run = function() {
 		touch_precedure = function() {
-			other.color_change()
+			other.change_color()
 		}
 		
 		if 0 < touch_time {
@@ -132,9 +132,9 @@ state_play = new (function() constructor {
 		draw_set_valign(1)
 
 		gpu_set_blendmode_ext(bm_inv_dest_color,bm_inv_src_color)
-		draw_text(other.size[0] * 0.5, other.size[1] * 0.4, player.hp)
-		draw_text(other.size[0] * 0.5, other.size[1] * 0.5, player.stars)
-		draw_text(other.size[0] * 0.5, other.size[1] * 0.6, player.combo)
+		draw_text(other.size[0] * 0.5, other.size[1] * 0.4, lives)
+		draw_text(other.size[0] * 0.5, other.size[1] * 0.5, score)
+		draw_text(other.size[0] * 0.5, other.size[1] * 0.6, combo)
 		gpu_set_blendmode(bm_normal)
 	}
 

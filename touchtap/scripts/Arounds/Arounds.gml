@@ -14,3 +14,7 @@ function io_check_ok() {
 	return keyboard_check_pressed(vk_enter)
 	or keyboard_check_pressed(vk_space)
 }
+
+function instance_create(obj, nx, ny, nlayer) {
+	return instance_create_layer(nx, ny, 2 < argument_count ? nlayer : layer, obj)
+}

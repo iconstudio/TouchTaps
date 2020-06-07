@@ -1,25 +1,23 @@
 /// @description 초기화
 global.stage = 0
-player = new (function() constructor {
-	hp_max_default = 3
-	hp = hp_max_default
-	stars = 0
-	combo = 0
+score = 0
+lives = 3
+combo = 0
 
+size = [room_width, room_height]
+image_xscale = size[0]
+image_yscale = size[1]
+
+player = instance_create_layer(size[0] * 0.5, size[1] * 0.5, "Instances", oPlayer)
+player_info = new (function() constructor {
 	static ready = function() {
-		hp = hp_max_default
-		stars = 0
-		combo = 0
+		score = 0
 	}
 
 	static die = function() {
 		
 	}
 })()
-
-size = [room_width, room_height]
-image_xscale = size[0]
-image_yscale = size[1]
 
 // 서피스 생성
 event_user(0)
