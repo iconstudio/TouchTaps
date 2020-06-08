@@ -9,15 +9,6 @@ image_xscale = size[0]
 image_yscale = size[1]
 
 player = instance_create_layer(size[0] * 0.5, size[1] * 0.5, "Instances", oPlayer)
-player_info = new (function() constructor {
-	static ready = function() {
-		score = 0
-	}
-
-	static die = function() {
-		
-	}
-})()
 
 // 서피스 생성
 event_user(0)

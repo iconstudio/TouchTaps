@@ -59,7 +59,7 @@ state_ready = new (function() constructor {
 	counter_period = seconds(1)
 
 	static construct = function() {
-		other.color.set_period(other.color_periods[2])
+		other.color.set_period(other.color_periods[0])
 	}
 
 	static run = function() {
@@ -69,7 +69,6 @@ state_ready = new (function() constructor {
 			if counter++ < counter_max {
 				counter_time = 0
 				other.change_color()
-				other.color.set_period(other.color_periods[0])
 				other.mode_change(other.state_ready)
 			} else {
 				counter_time = 0
@@ -105,7 +104,7 @@ state_play = new (function() constructor {
 	touch_period_max = seconds(0.5)
 
 	static construct = function() {
-		
+		other.player.stop = false
 	}
 
 	static run = function() {
@@ -139,8 +138,8 @@ state_play = new (function() constructor {
 		gpu_set_blendmode(bm_normal)
 	}
 
-	function destruct() {
-		
+	static destruct = function() {
+		other.player.stop = true
 	}
 })()
 
