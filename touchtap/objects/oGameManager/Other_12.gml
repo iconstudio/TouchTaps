@@ -17,7 +17,8 @@ state_intro = new (function() constructor {
 	}
 
 	static draw = function() {
-		
+		var time_ratio = time / period * 3
+		draw_sprite_ext(sLogo, 0, other.size[0] * 0.5, other.size[1] * 0.5, 1, 1, 0, $ffffff, time_ratio)
 	}
 
 	static destruct = function() {
