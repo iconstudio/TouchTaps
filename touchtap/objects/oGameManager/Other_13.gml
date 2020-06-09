@@ -61,16 +61,19 @@ color = new (function() constructor {
 
 function change_color(h, s, v) {
 	color.set(h, s, v)
-	image_blend = color_method(color.hue, color.sat, color.val)
+	layer_background_blend(background_id, color_method(color.hue, color.sat, color.val))
+	//image_blend = color_method(color.hue, color.sat, color.val)
 }
 
 function change_color() {
 	color.set(irandom(255), irandom(255), irandom(255))
-	image_blend = color_method(color.hue, color.sat, color.val)
+	layer_background_blend(background_id, color_method(color.hue, color.sat, color.val))
+	//image_blend = color_method(color.hue, color.sat, color.val)
 }
 
 // ** 즉시 색상 변경 **
 function change_color_immediately() {
 	color.set_immediately(irandom(255), 63 + irandom(192), 128 + irandom(127))
-	image_blend = color_method(color.hue, color.sat, color.val)
+	layer_background_blend(background_id, color_method(color.hue, color.sat, color.val))
+	//image_blend = color_method(color.hue, color.sat, color.val)
 }

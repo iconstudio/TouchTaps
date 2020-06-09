@@ -4,6 +4,8 @@ score = 0
 lives = 3
 combo = 0
 
+layer_id = layer_get_id("Background")
+background_id = layer_background_get_id(layer_id)
 size = [room_width, room_height]
 //image_xscale = size[0]
 //image_yscale = size[1]
