@@ -1,4 +1,7 @@
 /// @description 동작
+if stop
+	exit
+
 var check_h = global.io_pressed_right - global.io_pressed_left
 var check_v = global.io_pressed_down - global.io_pressed_up
 

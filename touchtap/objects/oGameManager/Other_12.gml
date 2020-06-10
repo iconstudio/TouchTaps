@@ -90,7 +90,7 @@ state_ready = new (function() constructor {
 	}
 
 	static destruct = function() {
-		
+		counter = 0
 	}
 })()
 
@@ -113,8 +113,8 @@ state_play = new (function() constructor {
 		
 		if 0 < touch_time {
 			touch_time--
-		} else if 1 < global.player.hp {
-			global.player.hp--
+		} else if 1 < lives {
+			lives--
 			touch_time = touch_period
 		} else {
 	

@@ -1,7 +1,6 @@
 /// @description 초기화
 direction = 90
 
-hp = 3
 stop = true
 
 ready = function() {
