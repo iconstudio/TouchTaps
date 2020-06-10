@@ -1,8 +1,5 @@
 {
-  "spriteId": {
-    "name": "sPoint",
-    "path": "sprites/sPoint/sPoint.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "spriteMaskId": null,

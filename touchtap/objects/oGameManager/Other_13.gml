@@ -59,21 +59,25 @@ color = new (function() constructor {
 	}
 })()
 
+function background_set_color() {
+	layer_background_blend(background_id, color_method(color.hue, color.sat, color.val))
+}
+
 function change_color(h, s, v) {
 	color.set(h, s, v)
-	layer_background_blend(background_id, color_method(color.hue, color.sat, color.val))
+	background_set_color()
 	//image_blend = color_method(color.hue, color.sat, color.val)
 }
 
 function change_color() {
 	color.set(irandom(255), irandom(255), irandom(255))
-	layer_background_blend(background_id, color_method(color.hue, color.sat, color.val))
+	background_set_color()
 	//image_blend = color_method(color.hue, color.sat, color.val)
 }
 
 // ** 즉시 색상 변경 **
 function change_color_immediately() {
 	color.set_immediately(irandom(255), 63 + irandom(192), 128 + irandom(127))
-	layer_background_blend(background_id, color_method(color.hue, color.sat, color.val))
+	background_set_color()
 	//image_blend = color_method(color.hue, color.sat, color.val)
 }

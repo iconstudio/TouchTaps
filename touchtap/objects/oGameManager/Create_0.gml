@@ -10,7 +10,7 @@ size = [room_width, room_height]
 //image_xscale = size[0]
 //image_yscale = size[1]
 
-player = instance_create_layer(size[0] * 0.5, size[1] * 0.5, "Instances", oPlayer)
+global.player = instance_create_layer(size[0] * 0.5, size[1] * 0.5, "Instances", oPlayer)
 
 // 서피스 생성
 event_user(0)

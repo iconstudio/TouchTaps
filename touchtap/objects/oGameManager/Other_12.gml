@@ -4,8 +4,7 @@ state_intro = new (function() constructor {
 	period = seconds(2)
 
 	static construct = function() {
-		other.color.set_period(1)
-		other.change_color()
+		other.change_color_immediately()
 	}
 
 	static run = function() {
@@ -69,7 +68,7 @@ state_ready = new (function() constructor {
 			if counter++ < counter_max {
 				counter_time = 0
 				other.change_color()
-				other.mode_change(other.state_ready)
+				other.mode_change(other.state_play)
 			} else {
 				counter_time = 0
 				counter = 0
@@ -104,7 +103,7 @@ state_play = new (function() constructor {
 	touch_period_max = seconds(0.5)
 
 	static construct = function() {
-		other.player.stop = false
+		global.player.stop = false
 	}
 
 	static run = function() {
@@ -114,8 +113,8 @@ state_play = new (function() constructor {
 		
 		if 0 < touch_time {
 			touch_time--
-		} else if 1 < other.player.hp {
-			other.player.hp--
+		} else if 1 < global.player.hp {
+			global.player.hp--
 			touch_time = touch_period
 		} else {
 	
@@ -127,6 +126,7 @@ state_play = new (function() constructor {
 	}
 
 	static draw = function() {
+		draw_set_color($ffffff)
 		draw_set_font(fontGame)
 		draw_set_halign(1)
 		draw_set_valign(1)
@@ -134,12 +134,12 @@ state_play = new (function() constructor {
 		gpu_set_blendmode_ext(bm_inv_dest_color,bm_inv_src_color)
 		draw_text(other.size[0] * 0.5, other.size[1] * 0.4, lives)
 		draw_text(other.size[0] * 0.5, other.size[1] * 0.5, score)
-		draw_text(other.size[0] * 0.5, other.size[1] * 0.6, combo)
+		draw_text(other.size[0] * 0.5, other.size[1] * 0.6, other.combo)
 		gpu_set_blendmode(bm_normal)
 	}
 
 	static destruct = function() {
-		other.player.stop = true
+		global.player.stop = true
 	}
 })()
 
