@@ -13,6 +13,11 @@ score = 0
 lives = 3
 combo = 0
 
+global.node_queue = ds_queue_create()
+node = function(direction) constructor {
+	self.direction = direction
+}
+
 // 서피스 생성
 event_user(0)
 event_user(1)
