@@ -15,6 +15,7 @@
     {"id":{"name":"roomInit","path":"rooms/roomInit/roomInit.yy",},"order":0,},
     {"id":{"name":"fontMainTitle","path":"fonts/fontMainTitle/fontMainTitle.yy",},"order":2,},
     {"id":{"name":"oNode","path":"objects/oNode/oNode.yy",},"order":4,},
+    {"id":{"name":"sNode","path":"sprites/sNode/sNode.yy",},"order":4,},
     {"id":{"name":"roomGame","path":"rooms/roomGame/roomGame.yy",},"order":1,},
   ],
   "Options": [
