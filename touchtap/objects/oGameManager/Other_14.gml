@@ -11,9 +11,9 @@ mode_change = function(Mode) {
 
 intersects = array_create(4, 0)
 intersect = function(angle) constructor {
-	ihorizontal = lengthdir_x(1, angle)
-	ivertical = lengthdir_y(1, angle)
-	itangent = ivertical / ihorizontal
+	var ihorizontal = lengthdir_x(1, angle)
+	var ivertical = lengthdir_y(1, angle)
+	var itangent = ivertical / ihorizontal
 	x = other.x + min(abs(-1 / itangent), 1) * sign(ihorizontal) * other.size[0]
 	y = other.y + min(abs(itangent), 1) * sign(ivertical) * other.size[1]
 	direction = angle
@@ -24,19 +24,30 @@ for (var i = 0; i < 4; ++i) {
 }
 
 // 큐: [노드, 다음 대기 시간]
-node_queue = ds_queue_create()
-node_time = -1
+trigger_queue = ds_queue_create()
+trigger_time = -1
+trigger = function(time_wait, datas) constructor {
+	
+}
+
 node = function(nx, ny, ndirection) constructor {
 	x = nx
 	y = ny
 	direction = ndirection
 }
 
-node_queue_add = function(nangle_index, time_wait) {
+trigger_queue_add = function(nangle_index, time_wait) {
 	var nx = intersects[nangle_index].x
 	var ny = intersects[nangle_index].y
 	var nd = (intersects[nangle_index].direction + 180) mod 360
-	ds_queue_enqueue(node_queue, [new node(nx, ny, nd), time_wait])
+	ds_queue_enqueue(trigger_queue, [new node(nx, ny, nd), time_wait])
+}
+
+trigger_queue_add = function(nangle_index, time_wait) {
+	var nx = intersects[nangle_index].x
+	var ny = intersects[nangle_index].y
+	var nd = (intersects[nangle_index].direction + 180) mod 360
+	ds_queue_enqueue(trigger_queue, [new node(nx, ny, nd), time_wait])
 }
 
 node_place = function(nnode) {

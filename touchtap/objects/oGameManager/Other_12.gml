@@ -113,11 +113,11 @@ state_play = new (function() constructor {
 			other.change_color()
 		}
 
-		if 0 == other.node_time {
+		if 0 == other.trigger_time {
 			// **
 			other.node_place()
-		} else if 0 < other.node_time {
-			other.node_time--
+		} else if 0 < other.trigger_time {
+			other.trigger_time--
 		}
 		
 		if 0 < touch_time {
