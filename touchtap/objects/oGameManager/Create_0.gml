@@ -1,8 +1,6 @@
 /// @description 초기화
 global.stage = 0
-event_user(4)
 mode = -1
-mode_change(state_intro)
 
 layer_id = layer_get_id("Background")
 background_id = layer_background_get_id(layer_id)
@@ -24,3 +22,7 @@ event_user(1)
 //
 event_user(2)
 event_user(3)
+
+//
+event_user(4)
+mode_change(state_intro)
