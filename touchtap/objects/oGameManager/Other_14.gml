@@ -23,9 +23,12 @@ for (var i = 0; i < 4; ++i) {
 	intersects[i] = new intersect(i * 90)
 }
 
-// 큐: [노드, 다음 대기 시간]
-trigger_queue = ds_queue_create()
-trigger_time = -1
+// 큐: [다음 대기 시간, 트리거 정보]
+trigger = {
+	queue: ds_queue_create(),
+	time: 0,
+	paused: false
+}
 trigger = function(time_wait, datas) constructor {
 	
 }
